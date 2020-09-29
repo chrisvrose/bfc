@@ -12,11 +12,12 @@
 class  bfParser : public antlr4::Parser {
 public:
   enum {
-    COMMENT = 1, INPUT = 2, OUTPUT = 3, DEC = 4, INC = 5, LEFT = 6, RIGHT = 7
+    NEWLINE = 1, COMMENT = 2, INPUT = 3, OUTPUT = 4, DEC = 5, INC = 6, LEFT = 7, 
+    RIGHT = 8
   };
 
   enum {
-    RuleProgram = 0, RuleStatements = 1
+    RuleProgram = 0, RuleStatements = 1, RuleStatement = 2
   };
 
   bfParser(antlr4::TokenStream *input);
@@ -30,13 +31,16 @@ public:
 
 
   class ProgramContext;
-  class StatementsContext; 
+  class StatementsContext;
+  class StatementContext; 
 
   class  ProgramContext : public antlr4::ParserRuleContext {
   public:
     ProgramContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    StatementsContext *statements();
+    antlr4::tree::TerminalNode *EOF();
+    std::vector<StatementsContext *> statements();
+    StatementsContext* statements(size_t i);
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -51,6 +55,22 @@ public:
   public:
     StatementsContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
+    std::vector<StatementContext *> statement();
+    StatementContext* statement(size_t i);
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  StatementsContext* statements();
+
+  class  StatementContext : public antlr4::ParserRuleContext {
+  public:
+    StatementContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *INC();
     antlr4::tree::TerminalNode *DEC();
     antlr4::tree::TerminalNode *INPUT();
@@ -63,7 +83,7 @@ public:
    
   };
 
-  StatementsContext* statements();
+  StatementContext* statement();
 
 
 private:

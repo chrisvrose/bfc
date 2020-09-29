@@ -23,6 +23,8 @@ public:
 
     virtual antlrcpp::Any visitStatements(bfParser::StatementsContext *context) = 0;
 
+    virtual antlrcpp::Any visitStatement(bfParser::StatementContext *context) = 0;
+
 
 };
 

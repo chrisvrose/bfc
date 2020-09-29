@@ -10,8 +10,8 @@ using namespace antlr4;
 
 class expressionListener : public bfBaseListener{
     public:
-       void enterProgram(bfParser::ProgramContext *ctx) override{
-           std::cout<<ctx->getText();
+       void enterStatements(bfParser::StatementsContext *ctx) override{
+           std::cout<<ctx->getText()<<std::endl;
        }
 };
 

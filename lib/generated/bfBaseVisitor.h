@@ -23,6 +23,10 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual antlrcpp::Any visitStatement(bfParser::StatementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
 
 };
 

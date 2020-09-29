@@ -20,6 +20,9 @@ public:
   virtual void enterStatements(bfParser::StatementsContext *ctx) = 0;
   virtual void exitStatements(bfParser::StatementsContext *ctx) = 0;
 
+  virtual void enterStatement(bfParser::StatementContext *ctx) = 0;
+  virtual void exitStatement(bfParser::StatementContext *ctx) = 0;
+
 
 };
 

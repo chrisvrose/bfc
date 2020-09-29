@@ -22,6 +22,9 @@ public:
   virtual void enterStatements(bfParser::StatementsContext * /*ctx*/) override { }
   virtual void exitStatements(bfParser::StatementsContext * /*ctx*/) override { }
 
+  virtual void enterStatement(bfParser::StatementContext * /*ctx*/) override { }
+  virtual void exitStatement(bfParser::StatementContext * /*ctx*/) override { }
+
 
   virtual void enterEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }
   virtual void exitEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }

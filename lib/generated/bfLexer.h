@@ -12,7 +12,8 @@
 class  bfLexer : public antlr4::Lexer {
 public:
   enum {
-    COMMENT = 1, INPUT = 2, OUTPUT = 3, DEC = 4, INC = 5, LEFT = 6, RIGHT = 7
+    NEWLINE = 1, COMMENT = 2, INPUT = 3, OUTPUT = 4, DEC = 5, INC = 6, LEFT = 7, 
+    RIGHT = 8
   };
 
   bfLexer(antlr4::CharStream *input);

@@ -1,9 +1,19 @@
 grammar bf;
 
-program: statements;
+program:
+    statements* EOF;
 
-statements: INC | DEC | INPUT|OUTPUT;
+statements:
+    statement+;
+    
+statement:
+      INC
+    | DEC
+    | INPUT
+    | OUTPUT
+    ;
 
+NEWLINE: '\n' -> skip;
 COMMENT: '\\\\.*?\\\\' -> skip;
 INPUT: '?';
 OUTPUT: '.';
