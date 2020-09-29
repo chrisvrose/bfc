@@ -6,5 +6,8 @@
         "listeners": true,
         "visitors": true,
         "outputDir": "../lib/generated"
+    },
+    "files.associations": {
+        "ostream": "cpp"
     }
 }

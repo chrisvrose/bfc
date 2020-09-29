@@ -41,11 +41,10 @@ public:
 
 int main(int argc, const char *argv[])
 {
-    // std::cout<<"Hello World "<<FIVE<<std::endl;
     std::ifstream stream;
-    try{
-        stream.open(argv[1]);
-    }catch(std::exception e){
+    
+    stream.open(argv[1]);
+    if(stream.fail()){
         std::cout<<"Could not open"<<std::endl;
         return 1;
     }

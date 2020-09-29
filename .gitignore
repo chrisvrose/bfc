@@ -1,6 +1,6 @@
 .antlr/
 build/
-
+lib/
 # Prerequisites
 *.d
 

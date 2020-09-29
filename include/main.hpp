@@ -1,3 +1,3 @@
-#ifndef __MAIN_HPP
-#define FIVE 5
-#endif
+#pragma once
+
+#define FOO 1
