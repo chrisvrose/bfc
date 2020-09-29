@@ -20,8 +20,20 @@ public:
   virtual void enterStatements(bfParser::StatementsContext *ctx) = 0;
   virtual void exitStatements(bfParser::StatementsContext *ctx) = 0;
 
+  virtual void enterLoopStmt(bfParser::LoopStmtContext *ctx) = 0;
+  virtual void exitLoopStmt(bfParser::LoopStmtContext *ctx) = 0;
+
+  virtual void enterNumberedStatement(bfParser::NumberedStatementContext *ctx) = 0;
+  virtual void exitNumberedStatement(bfParser::NumberedStatementContext *ctx) = 0;
+
   virtual void enterStatement(bfParser::StatementContext *ctx) = 0;
   virtual void exitStatement(bfParser::StatementContext *ctx) = 0;
+
+  virtual void enterInputStmt(bfParser::InputStmtContext *ctx) = 0;
+  virtual void exitInputStmt(bfParser::InputStmtContext *ctx) = 0;
+
+  virtual void enterOutputStmt(bfParser::OutputStmtContext *ctx) = 0;
+  virtual void exitOutputStmt(bfParser::OutputStmtContext *ctx) = 0;
 
 
 };

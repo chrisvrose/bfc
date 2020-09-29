@@ -22,8 +22,20 @@ public:
   virtual void enterStatements(bfParser::StatementsContext * /*ctx*/) override { }
   virtual void exitStatements(bfParser::StatementsContext * /*ctx*/) override { }
 
+  virtual void enterLoopStmt(bfParser::LoopStmtContext * /*ctx*/) override { }
+  virtual void exitLoopStmt(bfParser::LoopStmtContext * /*ctx*/) override { }
+
+  virtual void enterNumberedStatement(bfParser::NumberedStatementContext * /*ctx*/) override { }
+  virtual void exitNumberedStatement(bfParser::NumberedStatementContext * /*ctx*/) override { }
+
   virtual void enterStatement(bfParser::StatementContext * /*ctx*/) override { }
   virtual void exitStatement(bfParser::StatementContext * /*ctx*/) override { }
+
+  virtual void enterInputStmt(bfParser::InputStmtContext * /*ctx*/) override { }
+  virtual void exitInputStmt(bfParser::InputStmtContext * /*ctx*/) override { }
+
+  virtual void enterOutputStmt(bfParser::OutputStmtContext * /*ctx*/) override { }
+  virtual void exitOutputStmt(bfParser::OutputStmtContext * /*ctx*/) override { }
 
 
   virtual void enterEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }

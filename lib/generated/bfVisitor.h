@@ -23,7 +23,15 @@ public:
 
     virtual antlrcpp::Any visitStatements(bfParser::StatementsContext *context) = 0;
 
+    virtual antlrcpp::Any visitLoopStmt(bfParser::LoopStmtContext *context) = 0;
+
+    virtual antlrcpp::Any visitNumberedStatement(bfParser::NumberedStatementContext *context) = 0;
+
     virtual antlrcpp::Any visitStatement(bfParser::StatementContext *context) = 0;
+
+    virtual antlrcpp::Any visitInputStmt(bfParser::InputStmtContext *context) = 0;
+
+    virtual antlrcpp::Any visitOutputStmt(bfParser::OutputStmtContext *context) = 0;
 
 
 };

@@ -8,25 +8,54 @@
 
 using namespace antlr4;
 
-class expressionListener : public bfBaseListener{
-    public:
-       void enterStatements(bfParser::StatementsContext *ctx) override{
-           std::cout<<ctx->getText()<<std::endl;
-       }
+class expressionPrintingListener : public bfBaseListener
+{
+public:
+    void enterStatement(bfParser::StatementContext *ctx) override
+    {
+        std::cout << ctx->getText();
+    }
+    void enterNumberedStatement(bfParser::NumberedStatementContext *ctx) override
+    {
+        int num = 0;
+        try{
+            num = stoi(ctx->NUMBER()->getText());
+        }catch(std::exception e){
+            num = 1;
+        }
+        for (int i = 0; i < num - 1; i++)
+        {
+            std::cout << ctx->statement()->getText();
+        }
+    }
+    void exitProgram(bfParser::ProgramContext *ctx) override{
+        std::cout<<std::endl;
+    }
+    void enterLoopStmt(bfParser::LoopStmtContext *ctx) override{
+        std::cout<<'[';
+    }
+    void exitLoopStmt(bfParser::LoopStmtContext *ctx) override{
+        std::cout<<']';
+    }
 };
 
-int main(int argc, const char* argv[])
+int main(int argc, const char *argv[])
 {
     // std::cout<<"Hello World "<<FIVE<<std::endl;
     std::ifstream stream;
-    stream.open(argv[1]);
+    try{
+        stream.open(argv[1]);
+    }catch(std::exception e){
+        std::cout<<"Could not open"<<std::endl;
+        return 1;
+    }
     ANTLRInputStream input(stream);
     bfLexer lexer(&input);
     CommonTokenStream tokens(&lexer);
     bfParser parser(&tokens);
 
     tree::ParseTree *tree = parser.program();
-    expressionListener listener;
+    expressionPrintingListener listener;
     tree::ParseTreeWalker::DEFAULT.walk(&listener, tree);
 
     return 0;

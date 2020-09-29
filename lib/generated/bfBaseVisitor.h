@@ -23,7 +23,23 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual antlrcpp::Any visitLoopStmt(bfParser::LoopStmtContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitNumberedStatement(bfParser::NumberedStatementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual antlrcpp::Any visitStatement(bfParser::StatementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitInputStmt(bfParser::InputStmtContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitOutputStmt(bfParser::OutputStmtContext *ctx) override {
     return visitChildren(ctx);
   }
 
