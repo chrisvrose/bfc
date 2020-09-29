@@ -2,6 +2,7 @@
 build/
 lib/
 # Prerequisites
+thirdparty/antlr/*.jar
 *.d
 
 # Compiled Object files
