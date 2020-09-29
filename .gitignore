@@ -1,3 +1,6 @@
+.antlr/
+build/
+
 # Prerequisites
 *.d
 
@@ -30,8 +33,6 @@
 *.exe
 *.out
 *.app
-
-build/
 
 CMakeLists.txt.user
 CMakeCache.txt

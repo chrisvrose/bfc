@@ -1,3 +1,10 @@
 {
-    "cmake.configureOnOpen": true
+    "cmake.configureOnOpen": true,
+    "antlr4.generation": {
+        "mode": "external",
+        "language": "Cpp",
+        "listeners": true,
+        "visitors": true,
+        "outputDir": "../lib/generated"
+    }
 }
