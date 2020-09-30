@@ -7,17 +7,44 @@
         {
             "type": "antlr-debug",
             "request": "launch",
-            "name": "Debug Current Grammar",
-            "input": "sample.bfe",
+            "name": "Grammar - simple.bfe",
+            "input": "samples/simple.bfe",
             "visualParseTree": true,
-            "grammar": "${file}"
+            "grammar": "${workspaceFolder}/grammar/bf.g4"
         },
         {
-            "name": "(gdb) Launch",
+            "type": "antlr-debug",
+            "request": "launch",
+            "name": "Grammar - group.bfe",
+            "input": "samples/group.bfe",
+            "visualParseTree": true,
+            "grammar": "${workspaceFolder}/grammar/bf.g4"
+        },
+        {
+            "name": "GDB - simple.bfe",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/debug/main.out",
-            "args": ["sample.txt"],
+            "program": "${workspaceFolder}/build/main.out",
+            "args": ["samples/simple.bfe"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "GDB - group.bfe",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/main.out",
+            "args": ["samples/group.bfe"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
