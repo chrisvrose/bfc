@@ -1,10 +1,12 @@
 #pragma once
 
 #include<string>
+#include "bfLexer.h"
+#include "bfParser.h"
 #include "bfBaseListener.h"
 
 
-class expressionPrintingListener : public bfBaseListener {
+class toBFListener : public bfBaseListener {
     protected:
         std::vector<std::string> printStack;
     public:
