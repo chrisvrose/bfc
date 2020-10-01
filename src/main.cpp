@@ -28,12 +28,12 @@ int main(int argc, const char *argv[])
     tree::ParseTree *tree = parser.program();
     // toBFListener listener;
     // tree::ParseTreeWalker::DEFAULT.walk(&listener, tree);
-
     executeBGE* visitor = new executeBGE();
     try{
         visitor->visit(tree);
+        std::cout<<std::endl;
     }catch(std::string e){
-        std::cout<<"Illegal:"<<e;
+        std::cout<<"Illegal:"<<e<<std::endl;
     }
     return 0;
 }
