@@ -4,13 +4,14 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/include",
-                "${workspaceFolder}/**",
+                "${workspaceFolder}/lib/antlr4/include",
+                "${workspaceFolder}/lib/cxxopts/include",
                 "${workspaceFolder}/lib/generated"
             ],
             "defines": [],
             "compilerPath": "/usr/lib64/ccache/clang",
             "cStandard": "c11",
-            "cppStandard": "c++14",
+            "cppStandard": "c++11",
             "intelliSenseMode": "clang-x64",
             "configurationProvider": "ms-vscode.cmake-tools"
         }

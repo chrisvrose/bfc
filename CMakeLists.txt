@@ -27,5 +27,6 @@ target_include_directories(main.out
         ${PROJECT_SOURCE_DIR}/lib/generated
         ${PROJECT_SOURCE_DIR}/include
         ${PROJECT_SOURCE_DIR}/lib/antlr4/include
+        ${PROJECT_SOURCE_DIR}/lib/cxxopts/include
 
 )

@@ -38,6 +38,7 @@ Any executeBGE::visitPtrRight(bfeParser::PtrRightContext *ctx){
 }
 
 Any executeBGE::visitPtrLeft(bfeParser::PtrLeftContext *ctx){
+    
     if(pointer==0) throw std::string("Decrement below zero");
     pointer--;
     return Any();

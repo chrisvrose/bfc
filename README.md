@@ -2,6 +2,11 @@
 
 An extension of a language that shall not be named
 
+Requires:
+1. cxxopts -> v2.2.1
+2. antlr4
+
+
 *HelloWorld.bfe*
 ```
 -[-7>+<]>-.-[->+5<]>++.+7..+3.[-3>+<]>-5.--[->+4<]>-.-8.+3.-6.-8.
