@@ -20,22 +20,6 @@ Requires:
 ./bfc prog.bfe -t #Translate file to bf
 ```
 
-## Setup oddities
-
-1. Copy antlr4's cpp libs to `./libs/antlr4`. (Please take care that the include folder points straight to the files not to `antlr-runtime`)
-2. Copy `antlr-4.8-complete.jar` to `./thirdparty/antlr`.
-3. Generate parsers to `./libs/generated` or use VSCode with the ANTLR extension.
-
-## Todo (Tentative)
-
-- [ ] Grammar
-    - [X] Number shorthand
-    - [X] Loop statements
-    - [ ] Shorthand segments
-- [X] Processing
-    - [X] Translate to bf
-    - [X] Execute results
-
 ## Syntax
 
 **Basic**
@@ -65,3 +49,20 @@ Eg.
 (+65>)3 //stores AAA
 (<.)3   //prints AAA
 ```
+
+
+## Setup oddities (dev)
+
+1. Copy antlr4's cpp libs to `./libs/antlr4`. (Please take care that the include folder points straight to the files not to `antlr-runtime`)
+2. Copy `antlr-4.8-complete.jar` to `./thirdparty/antlr`.
+3. Generate parsers to `./libs/generated` or use VSCode with the ANTLR extension.
+
+## Todo (Tentative)
+
+- [ ] Grammar
+    - [X] Number shorthand
+    - [X] Loop statements
+    - [ ] Shorthand segments
+- [X] Processing
+    - [X] Translate to bf
+    - [X] Execute results
