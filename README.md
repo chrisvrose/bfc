@@ -1,11 +1,12 @@
-# bfc
+# bfc (*.bfe)
 
 An extension of a language that shall not be named
 
-*Hello world*
+*HelloWorld.bfe*
 ```
 -[-7>+<]>-.-[->+5<]>++.+7..+3.[-3>+<]>-5.--[->+4<]>-.-8.+3.-6.-8.
 ```
+
 
 ## Setup oddities
 
@@ -20,6 +21,36 @@ An extension of a language that shall not be named
     - [X] Number shorthand
     - [X] Loop statements
     - [ ] Shorthand segments
-- [ ] Processing
+- [X] Processing
     - [X] Translate to bf
-    - [ ] Execute result
+    - [X] Execute results
+
+## Syntax
+
+**Basic**
+
+```bf
+,. IO
+<> Address manipulation
++- Value manipulation
+[] Looping construct
+```
+**Comments**
+
+`//` - Single Line
+
+`/* */` - Multi Line
+
+**Repeats**
+
+```
+<symbol><number>
+(<symbols>)<number>
+```
+Eg.
+```
++65. //prints A
+>
+(+65>)3 //stores AAA
+(<.)3   //prints AAA
+```
