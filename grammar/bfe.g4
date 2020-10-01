@@ -1,4 +1,4 @@
-grammar bf;
+grammar bfe;
 
 program
     : statements? EOF;

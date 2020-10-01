@@ -19,7 +19,7 @@ An extension of a language that shall not be named
 - [ ] Grammar
     - [X] Number shorthand
     - [X] Loop statements
-    - [ ] shorthand segments
+    - [ ] Shorthand segments
 - [ ] Processing
-    - [X] Print resultant .bf
-    - [ ] execute result
+    - [X] Translate to bf
+    - [ ] Execute result

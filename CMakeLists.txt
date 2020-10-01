@@ -10,12 +10,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(SOURCES
     src/main.cpp
     src/toBFListener.cpp
-    lib/generated/bfLexer.cpp
-    lib/generated/bfParser.cpp
-    lib/generated/bfBaseVisitor.cpp
-    lib/generated/bfVisitor.cpp
-    lib/generated/bfBaseListener.cpp
-    lib/generated/bfListener.cpp
+    src/executeBFE.cpp
+    lib/generated/bfeLexer.cpp
+    lib/generated/bfeParser.cpp
+    lib/generated/bfeBaseVisitor.cpp
+    lib/generated/bfeVisitor.cpp
+    lib/generated/bfeBaseListener.cpp
+    lib/generated/bfeListener.cpp
 )
 add_executable(main.out ${SOURCES})
 

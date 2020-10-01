@@ -2,11 +2,10 @@
 #include <vector>
 #include <string>
 #include <antlr4-common.h>
-#include "bfLexer.h"
-#include "bfParser.h"
+#include "bfeLexer.h"
+#include "bfeParser.h"
 #include "toBFListener.hpp"
 
-// #include "bfBaseVisitor.h"
 
 using namespace antlr4;
 
@@ -21,9 +20,9 @@ int main(int argc, const char *argv[])
         return 1;
     }
     ANTLRInputStream input(stream);
-    bfLexer lexer(&input);
+    bfeLexer lexer(&input);
     CommonTokenStream tokens(&lexer);
-    bfParser parser(&tokens);
+    bfeParser parser(&tokens);
 
     tree::ParseTree *tree = parser.program();
     toBFListener listener;

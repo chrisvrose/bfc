@@ -1,41 +1,40 @@
-#pragma once
-#include "bfParser.h"
-#include "bfBaseListener.h"
+#include "bfeParser.h"
+#include "bfeBaseListener.h"
 #include "toBFListener.hpp"
 // #include "bfBaseVisitor.h"
 
 using namespace antlr4;
 
-void toBFListener::enterProgram(bfParser::ProgramContext *ctx)
+void toBFListener::enterProgram(bfeParser::ProgramContext *ctx)
 {
     printStack.push_back("");
 }
-void toBFListener::exitProgram(bfParser::ProgramContext *ctx)
+void toBFListener::exitProgram(bfeParser::ProgramContext *ctx)
 {
     std::cout << printStack.front() << std::endl;
 }
-void toBFListener::enterPtrIncr(bfParser::PtrIncrContext *ctx)
+void toBFListener::enterPtrIncr(bfeParser::PtrIncrContext *ctx)
 {
     printStack.back() += "+";
 }
-void toBFListener::enterPtrDecr(bfParser::PtrDecrContext *ctx)
+void toBFListener::enterPtrDecr(bfeParser::PtrDecrContext *ctx)
 {
     printStack.back() += ("-");
 }
-void toBFListener::enterPtrLeft(bfParser::PtrLeftContext *ctx)
+void toBFListener::enterPtrLeft(bfeParser::PtrLeftContext *ctx)
 {
     printStack.back() += ("<");
 }
-void toBFListener::enterPtrRight(bfParser::PtrRightContext *ctx)
+void toBFListener::enterPtrRight(bfeParser::PtrRightContext *ctx)
 {
     printStack.back() += (">");
 }
 
-void toBFListener::enterNumberedStmt(bfParser::NumberedStmtContext *ctx)
+void toBFListener::enterNumberedStmt(bfeParser::NumberedStmtContext *ctx)
 {
     printStack.push_back("");
 }
-void toBFListener::exitNumberedStmt(bfParser::NumberedStmtContext *ctx)
+void toBFListener::exitNumberedStmt(bfeParser::NumberedStmtContext *ctx)
 {
     std::string s = printStack.back();
     printStack.pop_back();
@@ -45,18 +44,18 @@ void toBFListener::exitNumberedStmt(bfParser::NumberedStmtContext *ctx)
         printStack.back() += s;
     }
 }
-void toBFListener::enterLoopStmt(bfParser::LoopStmtContext *ctx){
+void toBFListener::enterLoopStmt(bfeParser::LoopStmtContext *ctx){
     printStack.push_back("");
 }
-void toBFListener::exitLoopStmt(bfParser::LoopStmtContext *ctx){
+void toBFListener::exitLoopStmt(bfeParser::LoopStmtContext *ctx){
     std::string s = printStack.back();
     printStack.pop_back();
     printStack.back()+= "["+s+"]";
 }
-void toBFListener::enterGroupedStmt(bfParser::GroupedStmtContext *ctx){
+void toBFListener::enterGroupedStmt(bfeParser::GroupedStmtContext *ctx){
     printStack.push_back("");
 }
-void toBFListener::exitGroupedStmt(bfParser::GroupedStmtContext *ctx){
+void toBFListener::exitGroupedStmt(bfeParser::GroupedStmtContext *ctx){
     std::string s = printStack.back();
     printStack.pop_back();
     printStack.back()+=(s);
