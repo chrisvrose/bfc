@@ -9,11 +9,11 @@ using namespace antlr4;
 using namespace antlrcpp;
 // using namespace std;
 class executeBGE: public bfeBaseVisitor{
-    private:
+    protected:
         std::vector<char> memory;
         int pointer=0;
     public:
-        executeBGE() : bfeBaseVisitor(),memory(100) {
+        executeBGE() : bfeBaseVisitor(),memory(1) {
         }
         // Any visitProgram(bfeParser::ProgramContext*) override;
         Any visitNumberedStmt(bfeParser::NumberedStmtContext*) override;
