@@ -5,6 +5,7 @@
 #include "bfeLexer.h"
 #include "bfeParser.h"
 #include "toBFListener.hpp"
+#include "executeBFE.hpp"
 
 
 using namespace antlr4;
@@ -25,8 +26,10 @@ int main(int argc, const char *argv[])
     bfeParser parser(&tokens);
 
     tree::ParseTree *tree = parser.program();
-    toBFListener listener;
-    tree::ParseTreeWalker::DEFAULT.walk(&listener, tree);
+    // toBFListener listener;
+    // tree::ParseTreeWalker::DEFAULT.walk(&listener, tree);
 
+    executeBGE* visitor = new executeBGE();
+    auto resultAny = visitor->visit(tree);
     return 0;
 }

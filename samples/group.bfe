@@ -1,2 +1,4 @@
-//should print ++++++
-(+2)3
+//should print AAA
+(+65>)3
+<<<
+(.>)3
