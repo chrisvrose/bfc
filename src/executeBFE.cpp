@@ -20,6 +20,9 @@ Any executeBGE::visitNumberedStmt(bfeParser::NumberedStmtContext *ctx){
 }
 
 Any executeBGE::visitPtrIncr(bfeParser::PtrIncrContext *ctx){
+    if(memory.size()<pointer){
+        memory.push_back(0);
+    }
     memory[pointer]++;
     return Any();
 }
@@ -35,6 +38,7 @@ Any executeBGE::visitPtrRight(bfeParser::PtrRightContext *ctx){
 }
 
 Any executeBGE::visitPtrLeft(bfeParser::PtrLeftContext *ctx){
+    if(pointer==0) throw std::string("Decrement below zero");
     pointer--;
     return Any();
 }

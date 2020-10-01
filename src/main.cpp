@@ -30,6 +30,10 @@ int main(int argc, const char *argv[])
     // tree::ParseTreeWalker::DEFAULT.walk(&listener, tree);
 
     executeBGE* visitor = new executeBGE();
-    auto resultAny = visitor->visit(tree);
+    try{
+        visitor->visit(tree);
+    }catch(std::string e){
+        std::cout<<"Illegal:"<<e;
+    }
     return 0;
 }
