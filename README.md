@@ -1,4 +1,4 @@
-# bfc (*.bfe)
+# (+97>)3<3+>+5>+2<2(.>)3 (*.bfe)
 
 An extension of a language that shall not be named
 
