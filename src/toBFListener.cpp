@@ -29,6 +29,12 @@ void toBFListener::enterPtrRight(bfeParser::PtrRightContext *ctx)
 {
     printStack.back() += (">");
 }
+void toBFListener::enterOutputStmt(bfeParser::OutputStmtContext *ctx) {
+    printStack.back() += (".");
+}
+void toBFListener::enterInputStmt(bfeParser::InputStmtContext *ctx) {
+    printStack.back() += (",");
+}
 
 void toBFListener::enterNumberedStmt(bfeParser::NumberedStmtContext *ctx)
 {
@@ -44,9 +50,14 @@ void toBFListener::exitNumberedStmt(bfeParser::NumberedStmtContext *ctx)
         printStack.back() += s;
     }
 }
+
+
+
 void toBFListener::enterLoopStmt(bfeParser::LoopStmtContext *ctx){
     printStack.push_back("");
 }
+
+
 void toBFListener::exitLoopStmt(bfeParser::LoopStmtContext *ctx){
     std::string s = printStack.back();
     printStack.pop_back();

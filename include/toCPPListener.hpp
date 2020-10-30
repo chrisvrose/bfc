@@ -6,7 +6,7 @@
 #include "bfeBaseListener.h"
 
 
-class toBFListener : public bfeBaseListener {
+class toCPPListener : public bfeBaseListener {
     protected:
         std::vector<std::string> printStack;
     public:

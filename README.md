@@ -1,8 +1,8 @@
 # (+97>)3<3+>+5>+2<2(.>)3 (*.bfe)
 
-An extension of a language that shall not be named
+A slight syntactic superset of BF.
 
-Requires:
+Development requirements:
 1. cxxopts -> v2.2.1
 2. antlr4
 
@@ -12,12 +12,20 @@ Requires:
 -[-7>+<]>-.-[->+5<]>++.+7..+3.[-3>+<]>-5.--[->+4<]>-.-8.+3.-6.-8.
 ```
 
+## Functions
+
+1. Interpret bfe(and bf) files
+2. Convert bf/bfe to bf
+3. Convert bf/bfe to C++ (not optimized)
+
+
 ## Usage
 
 ```sh
 ./bfc -h #Help
 ./bfc prog.bfe #Execute
-./bfc prog.bfe -t #Translate file to bf
+./bfc prog.bfe -a bf #Translate file to bf
+./bfc prog.bfe -a cpp # Translate file to cpp
 ```
 
 ## Syntax

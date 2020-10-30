@@ -10,6 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(SOURCES
     src/main.cpp
     src/toBFListener.cpp
+    src/toCPPListener.cpp
     src/executeBFE.cpp
     lib/generated/bfeLexer.cpp
     lib/generated/bfeParser.cpp
