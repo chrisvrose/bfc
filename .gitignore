@@ -1,6 +1,6 @@
 .antlr/
 build/
-lib/
+# lib/
 # Prerequisites
 thirdparty/antlr/*.jar
 *.d
