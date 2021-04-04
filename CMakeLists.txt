@@ -21,13 +21,13 @@ set(SOURCES
 )
 add_executable(main.out ${SOURCES})
 
-target_link_libraries(main.out ${PROJECT_SOURCE_DIR}/lib/antlr4/lib/libantlr4-runtime.a)
+target_link_libraries(main.out libantlr4-runtime.so)
+# target_link_libraries(main.out ${PROJECT_SOURCE_DIR}/lib/antlr4/lib/libantlr4-runtime.a)
 
 target_include_directories(main.out
     PUBLIC
         ${PROJECT_SOURCE_DIR}/lib/generated
         ${PROJECT_SOURCE_DIR}/include
-        ${PROJECT_SOURCE_DIR}/lib/antlr4/include
         ${PROJECT_SOURCE_DIR}/lib/cxxopts/include
-
+        /usr/include/antlr4-runtime
 )
