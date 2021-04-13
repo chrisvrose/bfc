@@ -61,14 +61,14 @@ Eg.
 
 ## Setup oddities (dev)
 
-1. Copy `antlr-4.8-complete.jar` to `./thirdparty/antlr`. (Required only if grammar has to be updated)
-2. Generate parsers to `./libs/generated` or use VSCode with the ANTLR extension.
+1. Generate parsers to `./libs/generated` or use VSCode with the ANTLR extension or use a downloaded ANTLR JAR.
 
 ## Todo (Tentative)
 
 - [ ] Grammar
     - [X] Number shorthand
     - [X] Loop statements
+    - [X] Ignore rest
     - [ ] Shorthand segments
 - [X] Processing
     - [X] Translate to bf

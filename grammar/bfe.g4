@@ -68,7 +68,6 @@ outputStmt
 NEWLINE: '\n' -> skip;
 COMMENT: '//' ~[\r\n]* '\r'? '\n'? -> channel(HIDDEN);
 ML_COMMENT: '/*' .*? '*/' ->channel(HIDDEN); 
-WS: [ \r\n] -> skip;
 DEF: '#';
 LOOPSTART: '[';
 LOOPEND:']';
@@ -81,3 +80,6 @@ DEC: '-';
 INC: '+';
 LEFT: '<';
 RIGHT: '>';
+EVERYTHING_ELSE: . ->channel(HIDDEN);
+WS: [ \r\n] -> skip;
+
