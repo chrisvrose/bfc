@@ -12,9 +12,9 @@
 class  bfeLexer : public antlr4::Lexer {
 public:
   enum {
-    NEWLINE = 1, COMMENT = 2, ML_COMMENT = 3, WS = 4, DEF = 5, LOOPSTART = 6, 
-    LOOPEND = 7, GRPSTART = 8, GRPEND = 9, NUMBER = 10, INPUT = 11, OUTPUT = 12, 
-    DEC = 13, INC = 14, LEFT = 15, RIGHT = 16
+    NEWLINE = 1, COMMENT = 2, ML_COMMENT = 3, DEF = 4, LOOPSTART = 5, LOOPEND = 6, 
+    GRPSTART = 7, GRPEND = 8, NUMBER = 9, INPUT = 10, OUTPUT = 11, DEC = 12, 
+    INC = 13, LEFT = 14, RIGHT = 15, EVERYTHING_ELSE = 16, WS = 17
   };
 
   bfeLexer(antlr4::CharStream *input);
